@@ -14,7 +14,7 @@ const Products = (props) => {
                 <h5 className="names">{name}</h5>
                 <p style={{width:'70%', margin:'0 auto'}}>{details}</p>
                 <h5 className="price">{price}</h5>
-              { admin ?  <button className="book-btn">i can't buy,im admin</button> : <Link to={`/buy/${_id}`}> <button className="book-btn">purchase now</button></Link>}
+     <Link to={`/buy/${_id}`}> <button className="book-btn">purchase now</button></Link>
             </div>
         </div>
     );

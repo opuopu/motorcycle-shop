@@ -13,9 +13,8 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ms-auto">
         <Nav.Link className="text-white fw-bold"  as={Link} to="/home">Home</Nav.Link>
-        {
-        admin &&  ' ' || <Nav.Link as={Link}  className=" text-white fw-bold" to="/explore">explore</Nav.Link>
-        } 
+      <Nav.Link as={Link}  className=" text-white fw-bold" to="/explore">explore</Nav.Link>
+    
      
      
      {  admin &&    user?.email  &&  <NavDropdown title="admin-control" id="basic-nav-dropdown">

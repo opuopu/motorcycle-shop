@@ -1,7 +1,7 @@
 import { GoogleAuthProvider,getAuth, signInWithPopup, onAuthStateChanged,signOut,createUserWithEmailAndPassword,signInWithEmailAndPassword ,updateProfile } from "firebase/auth";
 
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router";
+
 import Initialize from "../config/Init";
 
 
@@ -12,7 +12,7 @@ const Usefirebase = () =>{
     // const[password,setpassword] = useState('')
 const[isLoading,setLoading] = useState(true)
 const [error,seterror] = useState('')
-const [admin,setadmin] = useState('')
+const [admin,setadmin] = useState(false)
 
 
 
@@ -66,23 +66,24 @@ const registerUser = (email, password,name,history) => {
 }
 // 
 // onauthchange
-useEffect(()=>{
+// useEffect(()=>{
     
       
-    const unsubscribe=  onAuthStateChanged(auth,user=>{
-          if(user){
-              setuser(user)
+//     const unsubscribe=  onAuthStateChanged(auth,user=>{
+//           if(user){
+//               setuser(user)
            
-          }
-          else{
-              setuser({})
+//           }
+//           else{
+//               setuser({})
              
-          }
-          setLoading(false)
-      })
-      return ()=> unsubscribe
+//           }
+//           setLoading(false)
+      
+//       })
+//       return ()=> unsubscribe
     
-  },[])
+//   },[auth])
 //   -----------------------save user to database-------------
   const saveUser = (email,displayName,method) =>{
 const user = {email,displayName}
@@ -116,27 +117,51 @@ const signinuser = (email,password,location,history) =>{
     .finally(()=> setLoading(false))
 }
 
+
+useEffect(()=>{
+    
+      
+    const unsubscribe=  onAuthStateChanged(auth,user=>{
+          if(user){
+              setuser(user)
+           
+          }
+          else{
+              setuser({})
+             
+          }
+          setLoading(false)
+      
+      })
+      return ()=> unsubscribe
+    
+  },[auth])
 // ----------------cheek admin-----------------
 
 useEffect(()=>{
-setLoading(true)
+
 fetch(`https://intense-chamber-13019.herokuapp.com/user/${user?.email}`)
 .then(res =>res.json())
 .then(data =>
-    { setLoading(false)
+    { 
         setadmin(data.admin)
-        
      
+ 
     })
 },[user?.email])
 
 // logoout
 
 const Signout = () =>{
+    setLoading(true)
     signOut(auth)
     .then(()=>{
         setuser({})
     })
+    .catch(err =>{
+
+    })
+    .finally(()=>setLoading(false))
 
     // saveuser to database
     

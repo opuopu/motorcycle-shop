@@ -14,7 +14,7 @@ const Adminroute = ({children,...rest}) => {
         return (
             <div className="private-main">
     {
-        isLoading || !admin  ?  <div className="py-5 my-5"><Spinner className="text-center m-auto d-block "  animation="border" variant="success" /> 
+          !admin   ?  <div className="py-5 my-5"><Spinner className="text-center m-auto d-block "  animation="border" variant="success" /> 
        <h3 className="text-center py-2 text-primary">loading............</h3>
       </div>  :
     
@@ -23,7 +23,7 @@ const Adminroute = ({children,...rest}) => {
           
           {...rest}
           render={({ location }) =>
-         admin  ? (
+         admin && user?.email ? (
                  children
                ) : (
                  <Redirect

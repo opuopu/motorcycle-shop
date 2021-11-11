@@ -23,6 +23,8 @@ import Buymain from './config/pages/buyproduct/Buymain';
 import Loginhome from './config/pages/Login/Loginhome';
 import Registrationhome from './config/pages/Login/Registrationhome';
 import Notfound from './config/pages/notfound/Notfound';
+import Myorder from './config/pages/dashboard/Myorder';
+import Pay from './config/pages/dashboard/Pay';
 
 function App() {
   return (
@@ -34,7 +36,7 @@ function App() {
 <Route exact path='/'>
 <Homemain></Homemain>
 </Route>
-<Route exact path='/home'>
+<Route path='/home'>
 <Homemain></Homemain>
 </Route>
 
@@ -44,10 +46,10 @@ function App() {
 <Route exact path="/explore">
 <Exploremain></Exploremain>
 </Route>
-
 <Privateroute path="/dashboard">
 <Dashboard></Dashboard>
 </Privateroute>
+
 <Route exact path="/register">
 <Registrationhome></Registrationhome>
 </Route>

@@ -26,6 +26,7 @@ fetch(`https://intense-chamber-13019.herokuapp.com/getproducts`)
           .then(data =>{
             const confirm = window.confirm('are you want to sure delete?')
             if(confirm){
+           
               const restorder = products?.filter(data => data._id !==id)
               setproduct(restorder)
             }

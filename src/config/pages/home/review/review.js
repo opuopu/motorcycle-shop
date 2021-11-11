@@ -8,7 +8,7 @@ const Reviews = () => {
         fetch(`https://intense-chamber-13019.herokuapp.com/getreview`)
         .then(res =>res.json())
         .then(data =>setreview(data))
-    })
+    },[])
 
     return (
         <div>

@@ -13,6 +13,7 @@ import Myorder from './Myorder';
 import Pay from './Pay';
 import Review from './Review';
 import './dashboard.css'
+import Privateroute from '../Login/Privateroute/Privateroute';
   
 const Dashboard = () => {
     const {Signout} = Useauth()
@@ -35,15 +36,15 @@ const Dashboard = () => {
                         </div>
                         <div className="col-md-7">
                         <Switch>
-        <Route exact path={path}>
+        <Privateroute exact path={path}>
                <Myorder></Myorder>
-        </Route>
-        <Route path={`${path}/pay`}>
+        </Privateroute>
+        <Privateroute path={`${path}/pay`}>
          <Pay></Pay>
-        </Route>
-        <Route path={`${path}/review`}>
+        </Privateroute>
+        <Privateroute path={`${path}/review`}>
      <Review></Review>
-        </Route>
+        </Privateroute>
       </Switch>
                         </div>
                     </div>
