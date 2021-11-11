@@ -55,7 +55,7 @@ const Myorder = () => {
           <td>{order?.adress}</td>
           <td>{order?.productsprice}</td>
           <td>{order?.status}</td>
-          <td className="text-danger " onClick={()=>handledelete(order?._id)}><i class="fas fa-trash-alt"></i></td>
+          <td className="text-danger " onClick={()=>handledelete(order?._id)}><i className="fas fa-trash-alt"></i></td>
         </tr>
       
       </tbody>)
