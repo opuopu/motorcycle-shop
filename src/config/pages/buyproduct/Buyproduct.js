@@ -24,7 +24,7 @@ fetch(`https://intense-chamber-13019.herokuapp.com/single/${id}`)
     setloading(false)
 })
     },[id])
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
     
       const newdata = {...data,

@@ -6,7 +6,7 @@ import ReactStars from "react-rating-stars-component";
 
 const Review = () => {
     const {user} = Useauth()
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit ,reset} = useForm();
     const [rating,setrating] = useState(0)
     const [success,setsuccess] = useState(false)
     console.log(rating);
@@ -28,6 +28,7 @@ const Review = () => {
  .then(data => {
     if(data.acknowledged){
 setsuccess(true)
+reset()
     }
  })
     }
