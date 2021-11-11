@@ -14,7 +14,7 @@ const Header = () => {
         <Nav className="ms-auto">
         <Nav.Link className="text-white fw-bold"  as={Link} to="/home">Home</Nav.Link>
         {
-        !admin   && <Nav.Link as={Link}  className=" text-white fw-bold" to="/explore">explore</Nav.Link>
+        admin &&  ' ' || <Nav.Link as={Link}  className=" text-white fw-bold" to="/explore">explore</Nav.Link>
         } 
      
      
@@ -29,7 +29,7 @@ const Header = () => {
        
       
         {
-            !admin &&  user?.email && <Nav.Link as={Link}  className=" text-white fw-bold" to="/dashboard">dashboard</Nav.Link>
+            admin && ' ' ||  user?.email && <Nav.Link as={Link}  className=" text-white fw-bold" to="/dashboard">dashboard</Nav.Link>
         } 
       
       

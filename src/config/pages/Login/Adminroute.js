@@ -14,7 +14,7 @@ const Adminroute = ({children,...rest}) => {
         return (
             <div className="private-main">
     {
-        !admin  ?  <div className="py-5 my-5"><Spinner className="text-center m-auto d-block "  animation="border" variant="success" /> 
+        isLoading || !admin  ?  <div className="py-5 my-5"><Spinner className="text-center m-auto d-block "  animation="border" variant="success" /> 
        <h3 className="text-center py-2 text-primary">loading............</h3>
       </div>  :
     
@@ -23,12 +23,12 @@ const Adminroute = ({children,...rest}) => {
           
           {...rest}
           render={({ location }) =>
-         admin ? (
+         admin  ? (
                  children
                ) : (
                  <Redirect
                    to={{
-                     pathname: "/",
+                     pathname: "/home",
                      state: { from: location }
                    }}
                  />

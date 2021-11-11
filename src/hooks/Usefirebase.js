@@ -119,12 +119,13 @@ const signinuser = (email,password,location,history) =>{
 // ----------------cheek admin-----------------
 
 useEffect(()=>{
-
+setLoading(true)
 fetch(`https://intense-chamber-13019.herokuapp.com/user/${user?.email}`)
 .then(res =>res.json())
 .then(data =>
-    { 
+    { setLoading(false)
         setadmin(data.admin)
+        
      
     })
 },[user?.email])

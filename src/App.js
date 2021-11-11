@@ -22,6 +22,7 @@ import Buymain from './config/pages/buyproduct/Buymain';
 
 import Loginhome from './config/pages/Login/Loginhome';
 import Registrationhome from './config/pages/Login/Registrationhome';
+import Notfound from './config/pages/notfound/Notfound';
 
 function App() {
   return (
@@ -40,23 +41,23 @@ function App() {
 <Privateroute path="/buy/:id">
 <Buymain></Buymain>
 </Privateroute>
-<Privateroute path="/explore">
+<Route exact path="/explore">
 <Exploremain></Exploremain>
-</Privateroute>
+</Route>
 
 <Privateroute path="/dashboard">
 <Dashboard></Dashboard>
 </Privateroute>
-<Route path="/register">
+<Route exact path="/register">
 <Registrationhome></Registrationhome>
 </Route>
-<Route path="/login">
+<Route exact path="/login">
 <Loginhome></Loginhome>
 </Route>
 <Adminroute path="/addservice">
 <Addservice></Addservice>
 </Adminroute>
-<Adminroute path="/makeadmin">
+<Adminroute  path="/makeadmin">
 <Adminmain></Adminmain>
 </Adminroute>
 <Adminroute path="/manageorder">
@@ -65,7 +66,10 @@ function App() {
 <Adminroute path="/manageproduct">
 <Manageproductmain></Manageproductmain>
 </Adminroute>
+<Route  path="*">
+<Notfound></Notfound>
 
+</Route>
 </Switch>
 
 </BrowserRouter>
