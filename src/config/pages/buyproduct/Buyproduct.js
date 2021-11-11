@@ -51,7 +51,7 @@ history.push('/dashboard')
 
     };
     return (
-        <div>
+        <div className="mains">
             <h1 className=" main-title text-center my-5">Purchase Motorcycle</h1>
 
             <Container>

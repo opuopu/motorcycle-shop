@@ -64,7 +64,7 @@ const ratingChanged = (newRating) => {
             <textarea defaultValue='write something here' className="review-box" {...register("review")} /> <br /> 
             <input type="submit" className="book-btn" value="submit review" />
             </form>
-               <p className="text-center text-info fw-bold my-2">review successfully added</p>
+              {success && <p className="text-center text-info fw-bold my-2">review successfully added</p>}
         </div>
     );
 };
