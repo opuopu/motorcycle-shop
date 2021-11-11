@@ -55,7 +55,7 @@ const ratingChanged = (newRating) => {
     />
            </div>
          
-            <form className="text-center mt-3" onSubmit={handleSubmit(onSubmit)}>
+            <form className="text-center " onSubmit={handleSubmit(onSubmit)}>
                
                 <label htmlFor="">your name</label> <br />
             { user?.displayName &&  <input  className="input mb-3" defaultValue={user?.displayName} {...register("name")} />} <br /> 

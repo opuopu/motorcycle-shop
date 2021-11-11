@@ -21,20 +21,21 @@ const Dashboard = () => {
     return (
         <div>
                <h1 className="dash text-center bg-info">User Dashboard</h1>
-      <Container>
+    <Container>
                 <div className="grid">
              
-                    <div className="row align-items-center  ">
-                        <div className="col-md-5">
+                    <div className="row align-items-center">
+                        <div className="col-md-5 fixed">
                             <div className="sidebar shadow-sm">
-                            <Link to={`${url}`}> <button className="btn my-2 btn-primary">my order</button></Link> <br />
-                            <Link to={`${url}/pay`}> <button className="btn my-2   btns   btn-success">pay now</button></Link> <br />
-                            <Link to={`${url}/review`}> <button className="btn my-2 btn-info">review now</button></Link> <br />
-                            <Link to="/home"> <button className="btn btns   my-2 btn-warning">back to home</button></Link> <br />
-                            <button  className="btn btns  my-2 btn-danger" onClick={Signout}>log out</button> 
+                            <Link to={`${url}`}> <h5 className="btn  ">my order</h5></Link> <br />
+                            <Link to={`${url}/pay`}> <h5 className="btn   btns  ">pay now</h5></Link> <br />
+                            <Link to={`${url}/review`}> <h5 className="btn ">review now</h5></Link> <br />
+                            <Link to="/home"> <h5 className="btn btns    ">back home</h5></Link> <br />
+                            <button  className=" btnm my-2 btn-danger" onClick={Signout}>log out</button> 
                                </div>
                         </div>
-                        <div className="col-md-7">
+
+    <div className="col-md-7 m-0 p-0">
                         <Switch>
         <Privateroute exact path={path}>
                <Myorder></Myorder>
@@ -46,7 +47,10 @@ const Dashboard = () => {
      <Review></Review>
         </Privateroute>
       </Switch>
+ 
                         </div>
+    
+                       
                     </div>
                 </div>
                 </Container>

@@ -32,7 +32,7 @@ const Header = () => {
         } 
       
       
-        { user?.email ? <Link to="/home"><button onClick={Signout} className="logout mt-1 btn btn-danger">logout</button></Link> : <Nav.Link  className="text-danger login fw-bold" as={Link} to="/login">login</Nav.Link> }
+        { user?.email ? <Link to="/home"><button onClick={Signout} className="logout mt-1 btnm btn-danger">logout</button></Link> : <Nav.Link  className="text-danger login fw-bold" as={Link} to="/login">login</Nav.Link> }
          {
           user?.displayName?   <p className="mt-2 text-white ms-1">  as: <span className="fw-bold text-info"> {user.displayName}</span></p> :
           <p className="mt-2 text-white">as: <span className="fw-bold text-info"> {user.email}</span></p>
