@@ -17,7 +17,7 @@ const Header = () => {
     
      
      
-     {  admin &&    user?.email  &&  <NavDropdown title="admin-control" id="basic-nav-dropdown">
+     {  admin &&    user?.email  &&  <NavDropdown title="admin-dashboard" id="basic-nav-dropdown">
           <NavDropdown.Item as={Link} to="/manageorder">manageorder</NavDropdown.Item>
           <NavDropdown.Item as={Link} to="/manageproduct">manage product</NavDropdown.Item>
           <NavDropdown.Item as={Link} to='/makeadmin'>make admin</NavDropdown.Item>
