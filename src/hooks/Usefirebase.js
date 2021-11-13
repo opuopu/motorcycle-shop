@@ -18,7 +18,7 @@ const [admin,setadmin] = useState(false)
 
 const auth = getAuth()
 const googleprovider = new GoogleAuthProvider()
-//----------------- google log in-----------------
+//----------------- google log i-----------------------
 const googlesign = (location,history) =>{
     setLoading(true)
  signInWithPopup(auth,googleprovider)
