@@ -32,7 +32,7 @@ const Dashboard = () => {
                     <div className="row">
                         <div className="col-md-5  ">
                             <div className=" sidebar shadow-sm">
-                            { admin? <Link to={`${url}/manageorder`}> <h5 className="btn">manageorder</h5></Link> : <Link to={`${url}`}> <h5 className="btn  ">my order</h5></Link>} <br />
+                            { admin? <Link to={`${url}/manageorder`}> <h5 className="btn">manageorder</h5></Link> : <Link to={`${url}/myorder`}> <h5 className="btn  ">my order</h5></Link>} <br />
                           { admin ? <Link to={`${url}/manageproduct`}> <h5 className="btn">manageproduct</h5></Link> :  <Link to={`${url}/pay`}> <h5 className="btn   btns  ">pay now</h5></Link>} <br />
                            { admin?  <Link to={`${url}/makeadmin`}> <h5 className="btn ">make admin</h5></Link> :  <Link to={`${url}/review`}> <h5 className="btn ">review now</h5></Link>}  <br />
                                   {admin ? <Link to={`${url}/addproduct`}> <h5 className="btn ">add product</h5></Link> : ' '} <br />
@@ -46,7 +46,10 @@ const Dashboard = () => {
 
     <div className="col-md-7 m-0 p-0">
                         <Switch>
-        <Privateroute exact path={path}>
+                            <Route exact path={`${path}`}>
+                                  <h1 className="mt-4 text-primary fw-bold">dashboard fetaures coming soon</h1>
+                            </Route>
+        <Privateroute  path={`${path}/myorder`}>
                <Myorder></Myorder>
         </Privateroute>
         <Adminroute path={`${path}/manageorder`}>
