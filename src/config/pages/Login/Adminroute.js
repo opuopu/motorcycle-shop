@@ -10,7 +10,7 @@ const Adminroute = ({children,...rest}) => {
   const history = useHistory()
     const {user,isLoading,admin} = Useauth()
 
-  if(isLoading || !admin){
+  if(isLoading){
    return  <div className="private-main">
     
      <div className="py-5 my-5"><Spinner className="text-center m-auto d-block "  animation="border" variant="success" /> 

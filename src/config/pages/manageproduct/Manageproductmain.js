@@ -6,9 +6,9 @@ import Manageproduct from './Manageproduct';
 const Manageproductmain = () => {
     return (
         <div>
-            <Header></Header>
+
             <Manageproduct></Manageproduct>
-            <Footer></Footer>
+
         </div>
     );
 };

@@ -14,23 +14,32 @@ import Pay from './Pay';
 import Review from './Review';
 import './dashboard.css'
 import Privateroute from '../Login/Privateroute/Privateroute';
+import Adminroute from '../Login/Adminroute';
+import Manageordermain from '../managerorder/Manageordermain'
+import Manageproductmain from '../manageproduct/Manageproductmain';
+import Makeadmin from '../admin/Makeadmin';
+import Addservice from '../addservice/Addservice';
   
 const Dashboard = () => {
-    const {Signout} = Useauth()
+    const {Signout,admin} = Useauth()
     let { path, url } = useRouteMatch();
     return (
         <div>
                <h1 className="dash text-center bg-info">User Dashboard</h1>
     <Container>
-                <div className="grid">
+                <div className="">
              
-                    <div className="row align-items-center">
-                        <div className="col-md-5 fixed">
-                            <div className="sidebar shadow-sm">
-                            <Link to={`${url}`}> <h5 className="btn  ">my order</h5></Link> <br />
-                            <Link to={`${url}/pay`}> <h5 className="btn   btns  ">pay now</h5></Link> <br />
-                            <Link to={`${url}/review`}> <h5 className="btn ">review now</h5></Link> <br />
+                    <div className="row">
+                        <div className="col-md-5  ">
+                            <div className=" sidebar shadow-sm">
+                            { admin? <Link to={`${url}/manageorder`}> <h5 className="btn">manageorder</h5></Link> : <Link to={`${url}`}> <h5 className="btn  ">my order</h5></Link>} <br />
+                          { admin ? <Link to={`${url}/manageproduct`}> <h5 className="btn">manageproduct</h5></Link> :  <Link to={`${url}/pay`}> <h5 className="btn   btns  ">pay now</h5></Link>} <br />
+                           { admin?  <Link to={`${url}/makeadmin`}> <h5 className="btn ">make admin</h5></Link> :  <Link to={`${url}/review`}> <h5 className="btn ">review now</h5></Link>}  <br />
+                                  {admin ? <Link to={`${url}/addproduct`}> <h5 className="btn ">add product</h5></Link> : ' '} <br />
+
                             <Link to="/home"> <h5 className="btn btns    ">back home</h5></Link> <br />
+
+
                             <button  className=" btnm my-2 btn-danger" onClick={Signout}>log out</button> 
                                </div>
                         </div>
@@ -40,6 +49,18 @@ const Dashboard = () => {
         <Privateroute exact path={path}>
                <Myorder></Myorder>
         </Privateroute>
+        <Adminroute path={`${path}/manageorder`}>
+ <Manageordermain></Manageordermain>
+        </Adminroute>
+        <Adminroute path={`${path}/manageproduct`} >
+                 <Manageproductmain></Manageproductmain>
+        </Adminroute>
+        <Adminroute path={`${path}/makeadmin`}>
+            <Makeadmin></Makeadmin>
+        </Adminroute>
+        <Adminroute path={`${path}/addproduct`}>
+<Addservice></Addservice>
+        </Adminroute>
         <Privateroute path={`${path}/pay`}>
          <Pay></Pay>
         </Privateroute>

@@ -5,7 +5,7 @@ import Manageorder from './Manageorder';
 const Manageordermain = () => {
     return (
         <div>
-            <Header></Header>
+      
             <Manageorder></Manageorder>
         </div>
     );

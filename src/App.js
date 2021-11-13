@@ -62,9 +62,7 @@ function App() {
 <Adminroute  path="/makeadmin">
 <Adminmain></Adminmain>
 </Adminroute>
-<Adminroute path="/manageorder">
-<Manageordermain></Manageordermain>
-</Adminroute>
+
 <Adminroute path="/manageproduct">
 <Manageproductmain></Manageproductmain>
 </Adminroute>

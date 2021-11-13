@@ -7,9 +7,9 @@ import Useauth from '../../../../hooks/Useauth';
 
 const Privateroute = ({children,...rest}) => {
 
-    const {user,isLoading} = Useauth()
+    const {user,isLoading,admin} = Useauth()
 
-  if(isLoading){
+  if( isLoading){
    return  <div className="py-5 my-5"><Spinner className="text-center m-auto d-block "  animation="border" variant="success" />
        <h3 className="text-center py-2 text-primary">loading............</h3>
       </div>

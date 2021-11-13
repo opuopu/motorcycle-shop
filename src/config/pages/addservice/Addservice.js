@@ -29,7 +29,7 @@ const Addservice = () => {
     }
     return (
         <div className="mains">
-            <Header></Header>
+          
             <h1 className="main-title text-center my-5">Add a Product</h1>
             <Container>
             <form className="text-center mb-4" onSubmit={handleSubmit(onSubmit)}>
@@ -47,7 +47,7 @@ const Addservice = () => {
          posts && <p className="text-center text-info fw-bold">product successfully added</p>
      }
     </Container>
-    <Footer></Footer>
+  
         </div>
     );
 };

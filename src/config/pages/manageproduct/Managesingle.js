@@ -5,7 +5,7 @@ const Managesingle = (props) => {
     const{name,image,details,price,_id} = props.product || {}
 
     return (
-        <div className="col-md-4 ">
+        <div className="col-md-6 ">
            <div className="order cart shadow">   
                   <img  src={image} alt="" />      
         <h5 className="names">{name}</h5>

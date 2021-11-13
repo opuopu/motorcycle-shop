@@ -26,7 +26,7 @@ const googlesign = (location,history) =>{
     const user = result.user 
     setuser(user) 
     saveUser(user?.email,user?.displayName,"PUT")
-     const redirect_url = location?.state?.from || '/'
+     const redirect_url = location?.state?.from || '/dashboard'
     history.push(redirect_url)
     seterror('')
    
@@ -55,7 +55,7 @@ const registerUser = (email, password,name,history) => {
               })
             
               saveUser(email,name,"POST")
-              history.push('/home')
+              history.push('/dashboard')
              
         })
         .catch((err) => {
@@ -107,7 +107,7 @@ const signinuser = (email,password,location,history) =>{
     .then(result=>{
         const user = result.user 
         setuser(user)
-        const redirect_url = location?.state?.from || '/'
+        const redirect_url = location?.state?.from || '/dashboard'
         history.push(redirect_url)
         seterror('')
     })

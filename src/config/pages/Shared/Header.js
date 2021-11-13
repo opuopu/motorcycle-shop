@@ -17,19 +17,12 @@ const Header = () => {
     
      
      
-     {  admin &&    user?.email  &&  <NavDropdown title="admin-dashboard" id="basic-nav-dropdown">
-          <NavDropdown.Item as={Link} to="/manageorder">manageorder</NavDropdown.Item>
-          <NavDropdown.Item as={Link} to="/manageproduct">manage product</NavDropdown.Item>
-          <NavDropdown.Item as={Link} to='/makeadmin'>make admin</NavDropdown.Item>
-          <NavDropdown.Item as={Link} to="/addservice">add product</NavDropdown.Item>
-         
-   
-        </NavDropdown>}
+     
        
       
         {
-            admin && ' ' ||  user?.email && <Nav.Link as={Link}  className=" text-white fw-bold" to="/dashboard">dashboard</Nav.Link>
-        } 
+          user?.email && <Nav.Link as={Link}  className=" text-white fw-bold" to="/dashboard">dashboard</Nav.Link>
+        }
       
       
         { user?.email ? <Link to="/home"><button onClick={Signout} className="logout mt-1 btnm btn-danger">logout</button></Link> : <Nav.Link  className="text-danger login fw-bold" as={Link} to="/login">login</Nav.Link> }

@@ -36,7 +36,7 @@ fetch(`https://intense-chamber-13019.herokuapp.com/update/${id}`,{
         <div className="mains">
             <h1 className="main-title text-center my-5">manage order</h1>
             <Container>
-         <Table responsive striped bordered hover variant="success">
+         <Table  responsive striped bordered hover variant="success">
   <thead>
     <tr>
       <th>#</th>
