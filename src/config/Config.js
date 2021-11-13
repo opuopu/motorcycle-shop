@@ -1,12 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBVz_eOCC4zrrMsZX7iTOwng0eHVvrI2vE",
-    authDomain: "apurbo-2dc23.firebaseapp.com",
-    databaseURL: "https://apurbo-2dc23.firebaseio.com",
-    projectId: "apurbo-2dc23",
-    storageBucket: "apurbo-2dc23.appspot.com",
-    messagingSenderId: "1022825985840",
-    appId: "1:1022825985840:web:0a5204140a81aa81fcbaf5"
-  };
-  
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID,
+};
 
 export default firebaseConfig
