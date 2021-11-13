@@ -65,17 +65,6 @@ const registerUser = (email, password,name,history) => {
         .finally(() => setLoading(false));
 }
 
-useEffect(()=>{
-
-fetch(`https://intense-chamber-13019.herokuapp.com/user/${user?.email}`)
-.then(res =>res.json())
-.then(data =>
-    { 
-        setadmin(data.admin)
-     
- 
-    })
-},[user?.email])
 //   -----------------------save user to database-------------
   const saveUser = (email,displayName,method) =>{
 const user = {email,displayName}
@@ -110,6 +99,8 @@ const signinuser = (email,password,location,history) =>{
 }
 
 
+
+
 useEffect(()=>{
     
       
@@ -123,7 +114,7 @@ useEffect(()=>{
              
           }
           setLoading(false)
-          setadmin(true)
+  
       
       })
       return ()=> unsubscribe
@@ -131,6 +122,17 @@ useEffect(()=>{
   },[auth])
 // ----------------cheek admin-----------------
 
+useEffect(()=>{
+
+    fetch(`https://intense-chamber-13019.herokuapp.com/user/${user?.email}`)
+    .then(res =>res.json())
+    .then(data =>
+        { 
+            setadmin(data.admin)
+         
+     
+        })
+    },[user?.email])
 
 
 // logoout

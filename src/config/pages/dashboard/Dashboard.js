@@ -19,6 +19,9 @@ import Manageordermain from '../managerorder/Manageordermain'
 import Manageproductmain from '../manageproduct/Manageproductmain';
 import Makeadmin from '../admin/Makeadmin';
 import Addservice from '../addservice/Addservice';
+import Dashome from './Dashome';
+import Manageproduct from '../manageproduct/Manageproduct';
+import Manageorder from '../managerorder/Manageorder';
   
 const Dashboard = () => {
     const {Signout,admin} = Useauth()
@@ -30,8 +33,10 @@ const Dashboard = () => {
                 <div className="">
              
                     <div className="row">
-                        <div className="col-md-5  ">
+                        <div className="col-md-5">
                             <div className=" sidebar shadow-sm">
+           
+                          
                             { admin? <Link to={`${url}/manageorder`}> <h5 className="btn">manageorder</h5></Link> : <Link to={`${url}/myorder`}> <h5 className="btn  ">my order</h5></Link>} <br />
                           { admin ? <Link to={`${url}/manageproduct`}> <h5 className="btn">manageproduct</h5></Link> :  <Link to={`${url}/pay`}> <h5 className="btn   btns  ">pay now</h5></Link>} <br />
                            { admin?  <Link to={`${url}/makeadmin`}> <h5 className="btn ">make admin</h5></Link> :  <Link to={`${url}/review`}> <h5 className="btn ">review now</h5></Link>}  <br />
@@ -45,33 +50,32 @@ const Dashboard = () => {
                         </div>
 
     <div className="col-md-7 m-0 p-0">
-                        <Switch>
-                            <Route exact path={`${path}`}>
-                                  <h1 className="mt-4 text-primary fw-bold">dashboard fetaures coming soon</h1>
-                            </Route>
-        <Privateroute  path={`${path}/myorder`}>
-               <Myorder></Myorder>
-        </Privateroute>
-        <Adminroute path={`${path}/manageorder`}>
- <Manageordermain></Manageordermain>
-        </Adminroute>
-        <Adminroute path={`${path}/manageproduct`} >
-                 <Manageproductmain></Manageproductmain>
-        </Adminroute>
-        <Adminroute path={`${path}/makeadmin`}>
-            <Makeadmin></Makeadmin>
-        </Adminroute>
-        <Adminroute path={`${path}/addproduct`}>
-<Addservice></Addservice>
-        </Adminroute>
+    <Switch>
+        <Route exact path={`${path}/`}>
+        <Dashome></Dashome>
+        </Route>
+        <Privateroute path={`${path}/myOrder`}>
+            <Myorder></Myorder>
+      </Privateroute>
         <Privateroute path={`${path}/pay`}>
-         <Pay></Pay>
-        </Privateroute>
+       <Pay></Pay>
+      </Privateroute>
         <Privateroute path={`${path}/review`}>
-     <Review></Review>
-        </Privateroute>
+<Review></Review>
+      </Privateroute>
+      <Adminroute path={`${path}/makeadmin`} >
+             <Makeadmin></Makeadmin>  
+      </Adminroute>
+      <Adminroute path={`${path}/manageproduct`} >
+          <Manageproduct></Manageproduct>
+      </Adminroute>
+      <Adminroute path={`${path}/addproduct`} >
+   <Addservice></Addservice>
+      </Adminroute>
+      <Adminroute path={`${path}/manageorder`} >
+   <Manageorder></Manageorder>
+      </Adminroute>
       </Switch>
- 
                         </div>
     
                        
